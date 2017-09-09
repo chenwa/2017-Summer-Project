@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include partials/header.ejs %>  
+</head>
+<body>
+  <% include partials/nav.ejs %>
+
+  <h1>New Post</h1>
+  <%if(postMessage){ %>
+    <h3><%= postMessage%></h3>
+  <%}%>
+
+  <form method="POST" action="/new">
+    Title: <input name="title" /> <br />
+    <textarea name="body"></textarea>
+    <input type="submit" value="Post It!" />
+  </form>
+</body>
+</html>

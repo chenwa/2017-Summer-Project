@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include partials/header.ejs %>  
+<script>
+function show(){
+  document.getElementById('password').style.display="block";  
+}
+</script>
+</head>
+<body>
+  <% include partials/nav.ejs %>
+
+  <h1>Settings</h1>
+
+
+  <form method="POST" action="/settings">
+    Background Color: 
+      <input type="color" name="backgroundColor" value="<%=custom.backgroundColor%>"> 
+    Text Color:
+      <input type="color" name="textColor" value="<%=custom.color%>"> 
+
+    <br />
+    <input type="button" onClick="show()" value="Change Password:" />
+      <input style="display:none;" id="password" name="password" />
+ 
+    <br />
+    <input type="submit"  value="Save Changes" />
+  </form>
+
+  <br />
+  <a href='/logout'> Logout </a>
+</body>
+</html>

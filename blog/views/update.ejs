@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include partials/header.ejs %>
+  <title><%= postTitle %></title>
+</head>
+<body>
+  <% include partials/nav.ejs %>
+  
+  <h1><%= postTitle %></h1>
+  <%if(postMessage){ %>
+    <h3><%= postMessage%></h3>
+  <%}%>
+
+  </br>
+
+  <form method="POST" action="/update/<%= postSlug %>">
+    Title: <input name="title" value="<%= postTitle %>"/>
+    <br />
+    <textarea name="body"><%= postBody %></textarea>
+    <br />
+    <input type="submit" value="Save Changes" />
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include partials/header.ejs %>  
+</head>
+<body>
+  <% include partials/nav.ejs %>
+
+  <h1>Create New Account</h1>
+  <%if(errMessage){ %>
+    <h3><%= errMessage %></h3>
+  <%}%>
+
+  <form method="POST" action="/newuser">
+    User: <input name="username" /> <br />
+    Password(Not Secure Right Now, Do Not Use a Real Password):
+    <input name="password" />
+    <input type="submit" value="Create" />
+  </form>
+
+  <a href='/login'> Back to Login </a>
+</body>
+</html>
